@@ -1,9 +1,33 @@
 import { Header } from "../../components/Header";
-import background from '../../assests/background.png'
+import background from '../../assests/background.png';
 import { ItemList } from "../../components/ItemList";
-import './styles.css'
+import { useState } from "react";
+import './styles.css';
 
 function App() {
+  const [user, setUser] = useState('');
+  const [currentUser, setCurrentUser] = useState(null);
+  const [repos, setRepos] = useState([]);
+
+  const handleGetData = async () => {
+    const userData = await fetch(`https://api.github.com/users/${user}`);
+    const newUser = await userData.json();
+
+    if (newUser.name) {
+      const { avatar_url, name, bio, login } = newUser;
+      setCurrentUser({ avatar_url, name, bio, login });
+
+      const reposData = await fetch(
+        `https://api.github.com/users/${user}/repos`
+      );
+      const newRepos = await reposData.json();
+
+      if (newRepos.length) {
+        setRepos(newRepos);
+      }
+    }
+  };
+
   return (
     <>
       <Header />
@@ -13,29 +37,42 @@ function App() {
 
         <div className="info">
           <div>
-            <input name="usuario" placeholder="@username" />
-            <button>Buscar</button>
-          </div>
-          <div className="perfil" >
-            <img
-              src="https://media.licdn.com/dms/image/v2/D4D35AQHyp10n1FNY4w/profile-framedphoto-shrink_200_200/profile-framedphoto-shrink_200_200/0/1710607237792?e=1729533600&v=beta&t=gTeivW9Oi5vXqVuJV53Ow0Mk2fqaCLk2PCHsq8VK2X8"
-              className="profile"
-              alt="imagem de perfil"
+            <input
+              name="usuario"
+              value={user}
+              onChange={event => setUser(event.target.value)}
+              placeholder="@username"
             />
-            <div>
-              <h3>Edvaldo Vitor</h3>
-              <p>Desenvolvedor Web</p>
-              <span>Desenvolvedor Web</span>
-            </div>
+            <button onClick={handleGetData}>Buscar</button>
           </div>
-          <hr/>
-          <div>
-            <h4 className="repositories">Repositórios</h4>
-            <ItemList 
-            title='Teste1'
-            description='test 2'/>
 
-          </div>
+          {currentUser ? (
+            <>
+              <div className="perfil">
+                <img
+                  src={currentUser.avatar_url}
+                  className="profile"
+                  alt="imagem de perfil"
+                />
+                <div>
+                  <h3>{currentUser.name}</h3>
+                  <p>{currentUser.bio}</p>
+                  <span>{currentUser.login}</span>
+                </div>
+              </div>
+              <hr />
+              <div>
+                <h4 className="repositories">Repositórios</h4>
+                {repos.map(repo => (
+                  <ItemList
+                    key={repo.id}
+                    title={repo.name}
+                    description={repo.description}
+                  />
+                ))}
+              </div>
+            </>
+          ) : null}
         </div>
       </div>
     </>
