@@ -77,9 +77,19 @@ button{
   margin: 20px 0 0 0;
 }
 
-.repositories{
-  color: #fff;
+.repositories {
+  color: var(--cor-texto);
   font-size: 32px;
   margin: 12px 0;
   text-align: center;
+  border-bottom: 2px solid var(--cor-borda);
+  padding-bottom: 10px;
+  background-color: var(--cor-fundo);
+  border-radius: 5px;
+  box-shadow: 0 4px 10px var(--cor-sombra);
+  transition: transform 0.3s;
+}
+
+.repositories:hover {
+  transform: scale(1.05);
 }

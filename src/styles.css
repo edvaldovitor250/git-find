@@ -11,3 +11,11 @@ hr{
     background-color: #999;
     border: 1px solid #999;
   }
+
+  :root {
+    --cor-fundo: #1D2128; 
+    --cor-texto: #fff; 
+    --cor-borda: #fff; 
+    --cor-sombra: rgba#1D2128;
+  }
+  
