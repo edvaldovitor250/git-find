@@ -1,76 +1,72 @@
-.conteudo{
-    position: relative;
-
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-end;
+.conteudo {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
 }
 
-
-.background{
-    height: 100vh;
-    position: absolute;
-    left: 0;
+.background {
+  height: 100vh;
+  position: absolute;
+  left: 0;
 }
 
-.info{
-    width: 65%;
-    margin-right: 90px;
-    margin-top: 40px;
-    color: white;
-    font-size: 24px;
-  }
-  
-input{
-    border-radius:20px;
-    border: 1px solid #E5E5E5;
-    min-width: 250px;
-    width: 85%;
-    background: transparent;
-    font-size: 18px;
-    padding: 10px;
-    color: #999;
-  }
+.info {
+  width: 65%;
+  margin-right: 90px;
+  margin-top: 40px;
+  color: white;
+  font-size: 24px;
+}
 
-button{
-    border-radius:20px;
-    border: 1px solid #E5E5E5;
-    background-color: #2D333B;
-    font-size: 18px;
-    padding: 10px;
-    
-    color: #999;
-    margin-left: 10px;
-  }
+input {
+  border-radius: 20px;
+  border: 1px solid #E5E5E5;
+  min-width: 250px;
+  width: 85%;
+  background: transparent;
+  font-size: 18px;
+  padding: 10px;
+  color: #999;
+}
 
-  .profile{
-    width: 120px;
-    height: 120px;
-    border-radius: 60px;
-    border: 2px solid #E5E5E5;
-    margin-right: 32px;
-  }
+button {
+  border-radius: 20px;
+  border: 1px solid #E5E5E5;
+  background-color: #2D333B;
+  font-size: 18px;
+  padding: 10px;
+  color: #999;
+  margin-top: 10px;
+  margin-left: 10px;
+}
 
-.perfil{
+.profile {
+  width: 120px;
+  height: 120px;
+  border-radius: 60px;
+  border: 2px solid #E5E5E5;
+  margin-right: 32px;
+}
+
+.perfil {
   display: flex;
   margin: 40px 0;
-
 }
 
-
-.perfil h3{
+.perfil h3 {
   color: #999999;
   font-size: 24px;
   margin: 0;
 }
 
-.perfil p{
+.perfil p {
   color: #999999;
   font-size: 12px;
   margin: 0;
 }
 
-.perfil span{
+.perfil span {
   display: block;
   color: #999999;
   font-size: 12px;
@@ -92,4 +88,43 @@ button{
 
 .repositories:hover {
   transform: scale(1.05);
+}
+
+@media (min-width: 601px) and (max-width: 900px) {
+  .info {
+    width: 80%;
+    margin-right: 60px;
+    font-size: 22px;
+  }
+
+  input {
+    min-width: 200px;
+  }
+
+  button {
+    font-size: 16px;
+  }
+
+  .profile {
+    width: 100px;
+    height: 100px;
+  }
+
+  .perfil h3 {
+    font-size: 22px;
+  }
+
+  .repositories {
+    font-size: 28px;
+  }
+}
+
+@media (min-width: 901px) {
+  .info {
+    width: 65%;
+  }
+
+  .repositories {
+    font-size: 32px;
+  }
 }
