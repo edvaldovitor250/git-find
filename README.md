@@ -35,7 +35,8 @@
 </ul>
 <h3>Rodar o Front-end 💻</h3>
 <p>Para iniciar o front-end, execute:</p>
-<pre><code>cd front-end<br/>npm run start</code></pre>
+<pre><code>cd git-find
+<br/>npm run start</code></pre>
 <p>O front-end estará disponível em: <a href="http://localhost:3000">http://localhost:3000</a></p>
 <p>Este projeto tem como objetivo fornecer uma interface simples e prática para pesquisar e visualizar informações de usuários do GitHub, facilitando o acesso a dados relevantes como repositórios, descrição e ID.</p>
 <h2 align="center">💻 Desenvolvedor</h2> 
