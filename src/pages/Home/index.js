@@ -54,11 +54,11 @@ function App() {
                   className="profile"
                   alt="imagem de perfil"
                 />
-                <div>
+                <div className="description-profile">
                   <h3>{currentUser.name}</h3>
                   <p>{currentUser.bio}</p>
-                  <span>{currentUser.login}</span>
-                </div>
+                  <span>{`Id: ${currentUser.login}`}</span>
+                  </div>
               </div>
               <hr />
               <div>

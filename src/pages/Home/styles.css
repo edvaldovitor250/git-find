@@ -43,6 +43,7 @@ button {
   overflow: hidden;
   z-index: 1;
   margin-left: 15px;
+  margin-top: 10px;
 }
 
 button::after{
@@ -124,6 +125,10 @@ button:active {
   border-radius: 5px;
   box-shadow: 0 4px 10px var(--cor-sombra);
   transition: transform 0.3s;
+}
+
+.description-profile p{
+  margin-top: 6px;
 }
 
 .repositories:hover {
