@@ -1,10 +1,11 @@
-import './styles.css'
+import './styles.js'
+import { HeaderStyles } from './styles.js'
 
 export const Header = () => {
     return (
-        <header >
+        <HeaderStyles >
             <h1>GitFind</h1>
-        </header>
+        </HeaderStyles>
     )
 
 }
