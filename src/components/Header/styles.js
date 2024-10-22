@@ -1,20 +1,21 @@
 import styled from "styled-components";
 
 export const HeaderStyles = styled.header`
-  background-color: #2D333B;
+ background-color: #2D333B;
   width: 100%;
-  height: auto;
-  padding: 0; 
+  padding: 0;
+  margin:0; 
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   text-align: center;
-  margin: 0;
+  position: relative; 
+  top: -8px; 
 
   h1 {
     background-color: #2D333B;
-    padding: 15px;
+    padding: 25px;
     margin: 0; 
     color: white;
     font-family: 'Inter', 'Roboto', 'Arial';
