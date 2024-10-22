@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import './styles.css';
+import { ItemListStyled } from './styles.js';  // Importe o ItemListStyled
 
 export const ItemList = ({ title, description, url }) => {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -7,7 +7,7 @@ export const ItemList = ({ title, description, url }) => {
   const hasDescription = description && description.length > 0;
 
   return (
-    <>
+    <ItemListStyled>
       <div className='item-list'>
         <a href={url} target="_blank" rel="noopener noreferrer">
           <strong>{title}</strong>
@@ -20,7 +20,7 @@ export const ItemList = ({ title, description, url }) => {
               description.slice(0, 100) + '...'
             )
           ) : (
-            'Sem descrição disponível.' 
+            'Sem descrição disponível.'
           )}
           {hasDescription && description.length > 100 && (
             <button onClick={() => setIsExpanded(!isExpanded)}>
@@ -30,6 +30,6 @@ export const ItemList = ({ title, description, url }) => {
         </p>
         <hr />
       </div>
-    </>
+    </ItemListStyled>
   );
 }

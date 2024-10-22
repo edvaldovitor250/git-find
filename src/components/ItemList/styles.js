@@ -1,3 +1,9 @@
+import styled from "styled-components";
+
+
+export const ItemListStyled = styled.div `
+
+
 .item-list {
     margin: 24px 0;
   }
@@ -46,3 +52,6 @@
     }
   }
   
+
+`
+
